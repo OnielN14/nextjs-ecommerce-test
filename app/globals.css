@@ -12,7 +12,12 @@
 
 @layer base {
   :root {
-    --primary: rgb(0, 208, 148)
+    --primary: rgb(0, 208, 148);
+    --accent: rgb(0, 158, 138);
+  }
+
+  html {
+    color: rgb(51, 51, 51);
   }
 }
 
@@ -26,6 +31,14 @@
     background-color: rgba(51, 51, 51, 0.5)
   }
 
+  .collection-carousel-button {
+    @apply top-full w-[8px] h-[16px];
+  }
+
+  .collection-carousel-button::after {
+    color: rgb(153, 153, 153);
+  }
+
   .search-input {
     @apply bg-none px-[12px] py-[9px] border w-full text-[14px] rounded outline-primary;
     border-color: rgb(221, 221, 221);
@@ -33,4 +46,5 @@
 
     @apply px-[40px];
   }
+
 }

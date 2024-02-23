@@ -7,8 +7,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 import { BannerData } from "@/typings/banner"
-import Image from "next/image"
 import useIsBigScreen from "@/hooks/useIsBigScreen"
+import { DELAY } from "@/utils/carousel"
 
 interface CarouselProps {
     items: BannerData[]
@@ -34,13 +34,13 @@ export default function Carousel({ items }: CarouselProps) {
                 spaceBetween={32}
                 slidesPerView={1}
                 modules={[Autoplay, Navigation, Pagination]} navigation pagination centeredSlides loop autoplay={{
-                    delay: 2000
+                    delay: DELAY
                 }}>
                 {
                     items.map((v) => (
                         <SwiperSlide key={v.mainBannerId}>
                             <a href={v.linkUrl}>
-                                <img src={isBigScreen ? v.pcImageUrl : v.mobileImageUrl} alt={v.title} />
+                                <img src={isBigScreen ? v.pcImageUrl : v.mobileImageUrl} alt={v.title} className="md:h-[320px]" />
                             </a>
                         </SwiperSlide>
                     ))

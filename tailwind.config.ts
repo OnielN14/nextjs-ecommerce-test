@@ -20,6 +20,9 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "var(--primary)"
+        },
+        accent: {
+          DEFAULT: "var(--accent)"
         }
       }
     },
