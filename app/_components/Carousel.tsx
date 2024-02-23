@@ -6,19 +6,16 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import { BIG_SCREEN, SMALL_SCREEN } from "@/utils/size"
 import { BannerData } from "@/typings/banner"
 import Image from "next/image"
-import { useWindowSize } from "usehooks-ts"
+import useIsBigScreen from "@/hooks/useIsBigScreen"
 
 interface CarouselProps {
     items: BannerData[]
 }
 
 export default function Carousel({ items }: CarouselProps) {
-    const { width } = useWindowSize({
-        initializeWithValue: false
-    })
+    const isBigScreen = useIsBigScreen()
 
     return (
         <div className='w-full overflow-hidden'>
@@ -43,7 +40,7 @@ export default function Carousel({ items }: CarouselProps) {
                     items.map((v) => (
                         <SwiperSlide key={v.mainBannerId}>
                             <a href={v.linkUrl}>
-                                <img src={width && width < BIG_SCREEN ? v.mobileImageUrl : v.pcImageUrl} alt={v.title} />
+                                <img src={isBigScreen ? v.pcImageUrl : v.mobileImageUrl} alt={v.title} />
                             </a>
                         </SwiperSlide>
                     ))

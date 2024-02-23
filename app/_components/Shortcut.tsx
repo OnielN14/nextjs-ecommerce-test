@@ -6,7 +6,7 @@ interface ShortcutProps {
 
 export default function Shortcut({ items }: ShortcutProps) {
     return (
-        <div className="md:mt-[40px] py-4 grid grid-cols-5 gap-x-[12px] gap-y-[24px] md:flex md:gap-0 mx-auto justify-center">
+        <div className="bg-white md:mt-[40px] py-4 px-[20px] md:px-0 grid grid-cols-5 gap-x-[12px] gap-y-[24px] md:flex md:gap-0 mx-auto justify-center">
             {items.map((v) => (
                 <ShortcutItem key={v.mainShortcutId} {...v} />
             ))}

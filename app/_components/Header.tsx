@@ -1,9 +1,25 @@
 'use client'
-import { Menu, Search } from "lucide-react"
+import useIsBigScreen from "@/hooks/useIsBigScreen"
+import { Menu, Search, Bell } from "lucide-react"
 
 export default function Header() {
+    const isBigScreen = useIsBigScreen()
+
+    if (!isBigScreen) {
+        return (
+            <header className="bg-white p-[4px] flex max-w-screen-sm h-[55px] mx-auto relative w-full">
+                <img src="/testvalley.svg" alt="Test Valley" className="cursor-pointer ml-[20px] w-[125.71px]" />
+
+                <div className="flex flex-grow items-center justify-end">
+                    <button className="p-[12px] text-gray-600"><Bell size={23} strokeWidth={1.5} /></button>
+                    <button className="p-[12px] text-gray-600"><Search size={23} strokeWidth={1.5} /></button>
+                </div>
+            </header>
+        )
+    }
+
     return (
-        <header className="sticky top-0 flex h-[72px] items-center">
+        <header className="bg-white sticky top-0 flex h-[72px] items-center">
             <div className="max-w-screen-md mx-auto w-full flex items-center">
                 <img src="/testvalley.svg" alt="Test Valley" className="cursor-pointer mr-[30px] w-[105.6px] h-[32px] md:mr-[16px] md:w-[128.345px] md:h-[25.093px]" />
 

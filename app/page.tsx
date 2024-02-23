@@ -17,7 +17,7 @@ export default async function Home() {
 
 
   return (
-    <main className="flex min-h-dvh flex-col mx-auto">
+    <main className="flex min-h-dvh flex-col mx-auto bg-[rgb(246,250,251)]">
       <Header />
       <div className="mx-auto max-w-screen-sm md:max-w-none w-full">
         <Carousel items={bannerImages} />
