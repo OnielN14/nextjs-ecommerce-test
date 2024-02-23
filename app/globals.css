@@ -9,6 +9,12 @@
   --swiper-navigation-size: 16px !important;
 }
 
+@layer base {
+  :root {
+    --primary: rgb(0, 208, 148)
+  }
+}
+
 @layer components {
   .carousel-side {
     @apply content-[''] w-[1000%] top-0 bottom-0 block absolute bg-white bg-opacity-60 z-10;
@@ -16,6 +22,16 @@
 
   .carousel-button {
     @apply w-[44px] h-[44px] !flex items-center justify-center p-[10px] rounded-full;
-    background: rgba(51, 51, 51, 0.5);
+    background-color: rgba(51, 51, 51, 0.5)
+  }
+
+  .category-button {}
+
+  .search-input {
+    @apply bg-none px-[12px] py-[9px] border w-full text-[14px] rounded outline-primary;
+    border-color: rgb(221, 221, 221);
+    color: rgb(51, 51, 51);
+
+    @apply px-[40px];
   }
 }

@@ -17,6 +17,11 @@ const config: Config = {
       fontFamily: {
         'sans': ['"Pretendard"', ...defaultTheme.fontFamily.sans]
       },
+      colors: {
+        primary: {
+          DEFAULT: "var(--primary)"
+        }
+      }
     },
   },
   plugins: [],
