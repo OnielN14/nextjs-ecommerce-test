@@ -1,8 +1,9 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
   --swiper-theme-color: #ffffff !important;
@@ -24,8 +25,6 @@
     @apply w-[44px] h-[44px] !flex items-center justify-center p-[10px] rounded-full;
     background-color: rgba(51, 51, 51, 0.5)
   }
-
-  .category-button {}
 
   .search-input {
     @apply bg-none px-[12px] py-[9px] border w-full text-[14px] rounded outline-primary;
