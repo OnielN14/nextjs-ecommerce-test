@@ -2,32 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --swiper-theme-color: #ffffff !important;
+  --swiper-navigation-size: 16px !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .carousel-side {
+    @apply content-[''] w-[1000%] top-0 bottom-0 block absolute bg-white bg-opacity-60 z-10;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .carousel-button {
+    @apply w-[44px] h-[44px] !flex items-center justify-center p-[10px] rounded-full;
+    background: rgba(51, 51, 51, 0.5);
   }
 }
